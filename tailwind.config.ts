@@ -61,7 +61,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				mood: {
+					sad: 'hsl(var(--mood-sad))',
+					neutral: 'hsl(var(--mood-neutral))',
+					happy: 'hsl(var(--mood-happy))',
+					excited: 'hsl(var(--mood-excited))',
+					angry: 'hsl(var(--mood-angry))',
+					sleepy: 'hsl(var(--mood-sleepy))'
 				}
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				display: ['Poppins', 'system-ui', 'sans-serif']
+			},
+			spacing: {
+				'18': '4.5rem',
+				'88': '22rem'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
