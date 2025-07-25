@@ -9,64 +9,64 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark mode base - midnight theme */
-    --background: 220 15% 7%;
-    --foreground: 220 10% 95%;
+    /* Light mode base - warm, calm tones */
+    --background: 40 20% 96%;
+    --foreground: 220 15% 15%;
 
-    /* Cards with subtle depth */
-    --card: 220 15% 9%;
-    --card-foreground: 220 10% 95%;
+    /* Cards with subtle warmth */
+    --card: 40 15% 98%;
+    --card-foreground: 220 15% 20%;
 
-    /* Popovers slightly lighter */
-    --popover: 220 15% 11%;
-    --popover-foreground: 220 10% 95%;
+    /* Popovers clean and light */
+    --popover: 40 20% 97%;
+    --popover-foreground: 220 15% 15%;
 
-    /* Primary - soft lavender for calm focus */
-    --primary: 260 60% 70%;
-    --primary-foreground: 220 15% 7%;
+    /* Primary - calming purple for focus */
+    --primary: 265 70% 58%;
+    --primary-foreground: 40 20% 96%;
 
-    /* Secondary - muted purple for subtle elements */
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 220 10% 80%;
+    /* Secondary - soft neutral for subtle elements */
+    --secondary: 40 15% 90%;
+    --secondary-foreground: 220 15% 25%;
 
-    /* Muted areas with warmth */
-    --muted: 220 15% 13%;
-    --muted-foreground: 220 8% 60%;
+    /* Muted areas with subtle warmth */
+    --muted: 40 12% 92%;
+    --muted-foreground: 220 8% 50%;
 
     /* Accent - gentle blue for highlights */
-    --accent: 200 80% 65%;
-    --accent-foreground: 220 15% 7%;
+    --accent: 200 70% 60%;
+    --accent-foreground: 40 20% 96%;
 
-    /* Destructive with care - soft red */
-    --destructive: 0 60% 65%;
-    --destructive-foreground: 220 10% 95%;
+    /* Destructive with care - warm red */
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 40 20% 96%;
 
-    /* Subtle borders and inputs */
-    --border: 220 15% 18%;
-    --input: 220 15% 15%;
-    --ring: 260 60% 70%;
+    /* Gentle borders and inputs */
+    --border: 40 12% 85%;
+    --input: 40 12% 88%;
+    --ring: 265 70% 58%;
 
     /* Rounded, gentle design */
     --radius: 1rem;
 
-    /* Mood-based accent colors */
-    --mood-sad: 220 70% 75%;
-    --mood-neutral: 200 20% 70%;
-    --mood-happy: 50 80% 75%;
-    --mood-excited: 320 70% 75%;
-    --mood-angry: 0 70% 70%;
-    --mood-sleepy: 260 40% 70%;
+    /* Mood-based accent colors - lighter versions */
+    --mood-sad: 220 60% 70%;
+    --mood-neutral: 200 30% 65%;
+    --mood-happy: 50 70% 70%;
+    --mood-excited: 320 60% 70%;
+    --mood-angry: 0 60% 65%;
+    --mood-sleepy: 260 50% 65%;
 
-    /* Gradients for depth and emotion */
-    --gradient-primary: linear-gradient(135deg, hsl(260 60% 70% / 0.3), hsl(220 80% 65% / 0.2));
-    --gradient-card: linear-gradient(135deg, hsl(220 15% 9%), hsl(220 15% 11%));
-    --gradient-mood: linear-gradient(135deg, hsl(var(--mood-sad) / 0.2), hsl(var(--mood-happy) / 0.1));
+    /* Gradients for depth and emotion - lighter */
+    --gradient-primary: linear-gradient(135deg, hsl(265 70% 58% / 0.2), hsl(200 70% 60% / 0.15));
+    --gradient-card: linear-gradient(135deg, hsl(40 15% 98%), hsl(40 20% 96%));
+    --gradient-mood: linear-gradient(135deg, hsl(var(--mood-sad) / 0.15), hsl(var(--mood-happy) / 0.1));
 
-    /* Glows and shadows */
-    --glow-primary: 0 0 20px hsl(260 60% 70% / 0.3);
-    --glow-mood: 0 0 30px hsl(var(--accent) / 0.4);
-    --shadow-soft: 0 4px 20px hsl(220 15% 5% / 0.8);
-    --shadow-card: 0 8px 32px hsl(220 15% 3% / 0.6);
+    /* Glows and shadows - softer for light mode */
+    --glow-primary: 0 0 20px hsl(265 70% 58% / 0.2);
+    --glow-mood: 0 0 30px hsl(var(--accent) / 0.3);
+    --shadow-soft: 0 4px 20px hsl(220 15% 40% / 0.1);
+    --shadow-card: 0 8px 32px hsl(220 15% 50% / 0.08);
 
     /* Transitions for smoothness */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -122,7 +122,65 @@ All colors MUST be HSL.
 
   @keyframes pulse-glow {
     0%, 100% { box-shadow: var(--glow-primary); }
-    50% { box-shadow: 0 0 40px hsl(260 60% 70% / 0.6); }
+    50% { box-shadow: 0 0 40px hsl(265 70% 58% / 0.4); }
+  }
+
+  .dark {
+    /* Dark mode base - midnight theme */
+    --background: 220 15% 7%;
+    --foreground: 220 10% 95%;
+
+    /* Cards with subtle depth */
+    --card: 220 15% 9%;
+    --card-foreground: 220 10% 95%;
+
+    /* Popovers slightly lighter */
+    --popover: 220 15% 11%;
+    --popover-foreground: 220 10% 95%;
+
+    /* Primary - soft lavender for calm focus */
+    --primary: 260 60% 70%;
+    --primary-foreground: 220 15% 7%;
+
+    /* Secondary - muted purple for subtle elements */
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 220 10% 80%;
+
+    /* Muted areas with warmth */
+    --muted: 220 15% 13%;
+    --muted-foreground: 220 8% 60%;
+
+    /* Accent - gentle blue for highlights */
+    --accent: 200 80% 65%;
+    --accent-foreground: 220 15% 7%;
+
+    /* Destructive with care - soft red */
+    --destructive: 0 60% 65%;
+    --destructive-foreground: 220 10% 95%;
+
+    /* Subtle borders and inputs */
+    --border: 220 15% 18%;
+    --input: 220 15% 15%;
+    --ring: 260 60% 70%;
+
+    /* Mood-based accent colors */
+    --mood-sad: 220 70% 75%;
+    --mood-neutral: 200 20% 70%;
+    --mood-happy: 50 80% 75%;
+    --mood-excited: 320 70% 75%;
+    --mood-angry: 0 70% 70%;
+    --mood-sleepy: 260 40% 70%;
+
+    /* Gradients for depth and emotion */
+    --gradient-primary: linear-gradient(135deg, hsl(260 60% 70% / 0.3), hsl(220 80% 65% / 0.2));
+    --gradient-card: linear-gradient(135deg, hsl(220 15% 9%), hsl(220 15% 11%));
+    --gradient-mood: linear-gradient(135deg, hsl(var(--mood-sad) / 0.2), hsl(var(--mood-happy) / 0.1));
+
+    /* Glows and shadows */
+    --glow-primary: 0 0 20px hsl(260 60% 70% / 0.3);
+    --glow-mood: 0 0 30px hsl(var(--accent) / 0.4);
+    --shadow-soft: 0 4px 20px hsl(220 15% 5% / 0.8);
+    --shadow-card: 0 8px 32px hsl(220 15% 3% / 0.6);
   }
 }
 

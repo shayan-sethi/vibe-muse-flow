@@ -4,36 +4,38 @@ import { Slider } from "@/components/ui/slider";
 import { Play, Shuffle, Heart, X, RotateCcw } from "lucide-react";
 
 export function PlaylistGenerator() {
-  const [moodSlider, setMoodSlider] = useState([50]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [playlist, setPlaylist] = useState<any[]>([]);
 
   const generatePlaylist = async () => {
     setIsGenerating(true);
     
-    // Simulate API call
+    // Simulate journal analysis + playlist generation
     setTimeout(() => {
       const mockPlaylist = [
         {
           id: 1,
-          title: "Midnight Reflections",
-          artist: "Luna Santos",
+          title: "Weightless",
+          artist: "Marconi Union",
           mood: "contemplative",
-          lyric: "In the quiet of the night, I find my peace..."
+          lyric: "Based on your reflection about finding peace...",
+          match: "92%"
         },
         {
           id: 2,
-          title: "Rising Above",
-          artist: "Echo Dreams",
-          mood: "hopeful",
-          lyric: "Every storm will pass, the sun will shine again..."
+          title: "Mad World",
+          artist: "Gary Jules",
+          mood: "understanding",
+          lyric: "Matches your feeling of being understood...",
+          match: "88%"
         },
         {
           id: 3,
-          title: "Gentle Waves",
-          artist: "Serene Souls",
-          mood: "calming",
-          lyric: "Let the rhythm wash your worries away..."
+          title: "The Night We Met",
+          artist: "Lord Huron",
+          mood: "reflective",
+          lyric: "Resonates with your emotional processing...",
+          match: "85%"
         }
       ];
       setPlaylist(mockPlaylist);
@@ -41,37 +43,21 @@ export function PlaylistGenerator() {
     }, 3000);
   };
 
-  const getMoodLabel = (value: number) => {
-    if (value < 25) return "☁️ Reflective";
-    if (value < 50) return "🌤 Peaceful";
-    if (value < 75) return "🌈 Uplifting";
-    return "✨ Energetic";
-  };
-
   return (
     <div className="space-y-6">
       <div className="card-glow rounded-2xl p-6 backdrop-blur-sm border border-border/20">
         <h2 className="text-xl font-display font-semibold mb-4 text-gradient">
-          Songs That Feel What You Feel
+          Songs From Your Soul
         </h2>
         
         <div className="space-y-6">
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <label className="text-sm font-medium text-muted-foreground">
-                Mood Vibe
-              </label>
-              <span className="text-sm font-medium text-primary">
-                {getMoodLabel(moodSlider[0])}
-              </span>
+          <div className="p-4 rounded-xl bg-secondary/30 border border-border/20">
+            <p className="text-sm text-muted-foreground mb-2">Latest Journal Analysis:</p>
+            <p className="text-sm italic">"Processing emotions through music and reflection..."</p>
+            <div className="flex items-center gap-2 mt-2">
+              <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+              <span className="text-xs text-muted-foreground">Contemplative mood detected</span>
             </div>
-            <Slider
-              value={moodSlider}
-              onValueChange={setMoodSlider}
-              max={100}
-              step={1}
-              className="w-full"
-            />
           </div>
           
           {!playlist.length && !isGenerating && (
@@ -81,7 +67,7 @@ export function PlaylistGenerator() {
               className="w-full rounded-xl h-12 text-base font-medium animate-pulse-glow"
             >
               <Shuffle className="w-4 h-4" />
-              Create Playlist From My Mood + Journal
+              Generate Playlist From Your Journal
               <Heart className="w-4 h-4" />
             </Button>
           )}
@@ -119,7 +105,12 @@ export function PlaylistGenerator() {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
-                        <h4 className="font-medium">{song.title}</h4>
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="font-medium">{song.title}</h4>
+                          <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">
+                            {song.match} match
+                          </span>
+                        </div>
                         <p className="text-sm text-muted-foreground">{song.artist}</p>
                         <p className="text-xs text-accent italic mt-1">"{song.lyric}"</p>
                       </div>
